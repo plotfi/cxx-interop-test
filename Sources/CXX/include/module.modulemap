@@ -1,3 +1,4 @@
 module CXX {
   header "CXX.h"
+  requires cplusplus
 }
