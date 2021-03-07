@@ -1,0 +1,3 @@
+module CXX {
+  header "CXX.h"
+}

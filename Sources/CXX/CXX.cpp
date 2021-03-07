@@ -1,0 +1,1 @@
+int cxx_f(int) { return 42; }
