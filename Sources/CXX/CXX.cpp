@@ -1,1 +1,1 @@
-int cxx_f(int) { return 42; }
+int cxx_f(int a) { return 42 + a; }
