@@ -9,7 +9,14 @@
  */
 
 // Extracted from https://github.com/facebook/componentkit
-// ComponentKit/Core/CKWritingDirection.h
+
+#import <ComponentKit/CKDefines.h>
+
+#ifndef CXX_INTEROP_FIXUP
+#import <UIKit/UIKit.h>
+#endif
+
+#if CK_NOT_SWIFT
 
 enum class CKWritingDirection {
   Natural,
@@ -20,3 +27,5 @@ enum class CKWritingDirection {
 CKWritingDirection CKGetWritingDirection();
 
 void CKOverrideWritingDirection(CKWritingDirection writingDirection);
+
+#endif

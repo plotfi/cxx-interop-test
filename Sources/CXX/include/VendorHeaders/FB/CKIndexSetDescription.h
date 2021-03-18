@@ -17,10 +17,7 @@
 #import <Foundation/Foundation.h>
 
 namespace CK {
-
-inline void CoalescedWillRenderRenderComponent(bool ancestorHasStateUpdate) {}
-inline void CoalescedDidRenderRenderComponent() {}
-inline BOOL IsCoalescedMode() { return NO; }
+  auto indexSetDescription(NSIndexSet *const is, NSString *const title = @"", const int indent = 0) -> NSString *;
 }
 
 #endif

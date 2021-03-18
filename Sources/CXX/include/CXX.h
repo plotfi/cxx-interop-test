@@ -16,6 +16,7 @@ bool is_str_42(std::string_view view) {
 // Most are extracted from ComponentKit or other ObjC++ frameworks.
 #include "VendorHeaders/FB/CKCoalescedSpecSupport.h"
 #include "VendorHeaders/FB/CKWritingDirection.h"
+#include "VendorHeaders/FB/CKIndexSetDescription.h"
 #endif
 #endif
 
