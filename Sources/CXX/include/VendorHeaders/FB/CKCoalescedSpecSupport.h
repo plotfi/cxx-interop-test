@@ -9,12 +9,9 @@
  */
 
 // Extracted from https://github.com/facebook/componentkit
+// ComponentKit/Base/CKCoalescedSpecSupport.h
 
-#import <ComponentKit/CKDefines.h>
-
-#if CK_NOT_SWIFT
-
-#import <Foundation/Foundation.h>
+#include <objc/objc.h>
 
 namespace CK {
 
@@ -22,5 +19,3 @@ inline void CoalescedWillRenderRenderComponent(bool ancestorHasStateUpdate) {}
 inline void CoalescedDidRenderRenderComponent() {}
 inline BOOL IsCoalescedMode() { return NO; }
 }
-
-#endif
