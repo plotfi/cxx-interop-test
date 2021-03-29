@@ -3,10 +3,19 @@
 
 #include <string_view>
 
-int cxx_f(int);
-
 bool is_str_42(std::string_view view) {
     return view == "42";
 }
+
+int cxx_f(int);
+
+struct MyStruct {
+  const int &operator[](int x) const { return 42; }
+};
+
+struct MyStructValType {
+  const int operator[](int x) const { return 42; }
+};
+
 
 #endif
