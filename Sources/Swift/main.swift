@@ -23,7 +23,9 @@ var MS1 = MS[0]
 var MS2 = MyStructValType()
 var MS3 = MS2[0]
 
-extension std.__1.__CxxTemplateInstNSt3__16vectorIiNS_9allocatorIiEEEE {
+typealias cxx_std_vector_of_int = std.__1.__CxxTemplateInstNSt3__16vectorIiNS_9allocatorIiEEEE
+
+extension cxx_std_vector_of_int {
   mutating func swift_array() -> Array<Self.value_type> {
     return Array<Self.value_type>(unsafeUninitializedCapacity: self.size()) {
       // FIXME(compnerd) this does not invoke the constructor for the moved
@@ -35,8 +37,8 @@ extension std.__1.__CxxTemplateInstNSt3__16vectorIiNS_9allocatorIiEEEE {
   }
 }
 
-var VV = V()
-let Vec = VV.getVec()[0].swift_array()
-print("std::vector: \(Vec)")
+var v = V()
+let a = VV.getVec()[0].swift_array()
+print("std::vector: \(a)")
 
 print("Done.")
