@@ -36,6 +36,7 @@ let package = Package(
                                           "-I", "Sources/CXX/include",
                                           "-I", "\(sdkRoot)/usr/include",
                                           "-I", "\(cPath)",
+                                          "-lc++,
                                           "-Xcc", "-nostdinc++"])]),
     ],
     cxxLanguageStandard: CXXLanguageStandard.cxx14
