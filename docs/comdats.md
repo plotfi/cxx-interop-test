@@ -109,3 +109,7 @@ $ swiftc <lots of flags not here> \
 $ ./main
 std::vector: [1, 2, 3]
 ```
+
+# Next Steps
+
+In the near term we likely want to have the swift compiler use information from the clang and swift AST to determine which specializations are needed and auto genearate those instead of writing them by hand. These specializations can then be compiled by clang as their own .o file and linked in. 
