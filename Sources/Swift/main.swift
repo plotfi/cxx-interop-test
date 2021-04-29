@@ -38,7 +38,7 @@ extension cxx_std_vector_of_int {
 }
 
 var v = V()
-let a = v.getVec()[0].swift_array()
-print("std::vector: \(a)")
+let arr = v.getVec()[0].swift_array()
+print("std::vector: \(arr)")
 
 print("Done.")

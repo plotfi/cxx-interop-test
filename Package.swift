@@ -28,15 +28,15 @@ let package = Package(
             dependencies: ["CXX"],
             path: "./Sources/Swift",
             sources: [ "main.swift" ],
-            swiftSettings: [.unsafeFlags(["-target", "arm64-apple-macosx10.15",
+            swiftSettings: [.unsafeFlags([
                                           // TODO: we shouldn't have to do this. See SRXXXX.
                                           "-Xfrontend", "-validate-tbd-against-ir=none",
-                                          "-Xfrontend",
-                                          "-enable-cxx-interop",
+                                          "-Xfrontend", "-enable-cxx-interop",
                                           "-I", "Sources/CXX/include",
                                           "-I", "\(sdkRoot)/usr/include",
                                           "-I", "\(cPath)",
-                                          "-lc++,
+                                          "-lc++",
+                                          "-Xfrontend", "-disable-implicit-concurrency-module-import",
                                           "-Xcc", "-nostdinc++"])]),
     ],
     cxxLanguageStandard: CXXLanguageStandard.cxx14
