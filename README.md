@@ -6,10 +6,7 @@ To build you need the latest top of tree Swift from github.com/apple/swift
 To build Swift with swift PM use buildscript as follows:
 
 ```
-/path/to/swift/checkouts/swift/utils/build-script --skip-build-benchmarks
---skip-ios --skip-watchos --skip-tvos --swift-darwin-supported-archs "$(uname
--m)" --release-debuginfo --swift-disable-dead-stripping --swiftpm --libcxx
---llbuild  --install-all true
+/path/to/swift/checkouts/swift/utils/build-script --skip-build-benchmarks --skip-ios --skip-watchos --skip-tvos --swift-darwin-supported-archs "$(uname -m)" --release-debuginfo --swift-disable-dead-stripping --swiftpm --libcxx --llbuild  --install-all true
 ```
 
 This will setup an xcode.app directory in your build dir. Modify your `PATH`,
