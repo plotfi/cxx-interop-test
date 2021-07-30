@@ -3,6 +3,21 @@ Small test app for C++ Interop with Swift.
 
 To build you need the latest top of tree Swift from github.com/apple/swift
 
+
+## NOTE: SPM can be busted at times when things require the latest ToT Swift. CMake can be more reliable:
+
+```
+cmake -GNinja -B./build .
+ninja -C./build
+./build/cxx-interop-test
+
+Output:
+
+std::vector: [1, 2, 3]
+Done.
+
+```
+
 To build Swift with swift PM use buildscript as follows:
 
 ```
