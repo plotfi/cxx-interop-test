@@ -17,12 +17,17 @@ This will setup an xcode.app directory in your build dir. Modify your `PATH`,
 `SDKROOT` and `CPATH` as follows:
 
 ```
-export SWIFT_BUILD_DIR=/path/to/swift/build
-export FAUXXCODE=Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
-export TOOLCHAIN=$SWIFT_BUILD_DIR/Ninja-*/toolchain-*/$FAUXXCODE
-export CPATH=$TOOLCHAIN/usr/include/c++/v1
-export PATH=$TOOLCHAIN/usr/bin/:$PATH
-export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+# Set these manually as you see fit:
+export SWIFT_BUILD_DIR=/path/to/swift/checkouts/build
+export TOOLCHAIN_BUILD_DIR=$SWIFT_BUILD_DIR/Ninja-RelWithDebInfoAssert/toolchain-macosx-x86_64
+export XCODE_DEV_ROOT=`xcode-select -p`
+
+# These should be correct as is:
+export XCTOOLCHAIN_SUBDIR=Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+export XCTOOLCHAIN=$TOOLCHAIN_BUILD_DIR/$XCTOOLCHAIN_SUBDIR
+export CPATH=$XCTOOLCHAIN/usr/include/c++/v1
+export PATH=$XCTOOLCHAIN/usr/bin/:$PATH
+export SDKROOT=$XCODE_DEV_ROOT/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 ```
 
 Ths should give you a workable swift package manager to use to build this project.
