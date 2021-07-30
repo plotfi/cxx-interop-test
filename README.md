@@ -18,7 +18,8 @@ This will setup an xcode.app directory in your build dir. Modify your `PATH`,
 
 ```
 export SWIFT_BUILD_DIR=/path/to/swift/build
-export TOOLCHAIN=$SWIFT_BUILD_DIR/Ninja-*/toolchain-*/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+export FAUXXCODE=Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+export TOOLCHAIN=$SWIFT_BUILD_DIR/Ninja-*/toolchain-*/$FAUXXCODE
 export CPATH=$TOOLCHAIN/usr/include/c++/v1
 export PATH=$TOOLCHAIN/usr/bin/:$PATH
 export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
