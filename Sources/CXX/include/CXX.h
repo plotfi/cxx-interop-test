@@ -23,4 +23,6 @@ struct V {
   std::vector<int> Vec = {1, 2, 3};
 };
 
+using cxx_std_vector_of_int = std::vector<int>;
+
 #endif

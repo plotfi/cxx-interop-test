@@ -23,7 +23,6 @@ var MS1 = MS[0]
 var MS2 = MyStructValType()
 var MS3 = MS2[0]
 
-typealias cxx_std_vector_of_int = std.__1.__CxxTemplateInstNSt3__16vectorIiNS_9allocatorIiEEEE
 
 extension cxx_std_vector_of_int {
   mutating func swift_array() -> Array<Self.value_type> {
