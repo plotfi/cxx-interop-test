@@ -60,6 +60,7 @@ NOTE:
 
 Quick repro:
 
+```
 swiftc -o cxx-interop-test -emit-dependencies \
   -sdk `xcode-select -p`/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk \
   -Xfrontend -enable-cxx-interop -Xfrontend -validate-tbd-against-ir=none \
@@ -67,3 +68,4 @@ swiftc -o cxx-interop-test -emit-dependencies \
   -Xcc -I`xcode-select -p`/XcodeDefault.xctoolchain/usr/include/c++/v1 \
   -I./Sources/CXX/include ./Sources/Swift/main.swift \
   -Xcc -DUSE_CTOR=1 -Xcc -DUSE_BASE=1
+```
