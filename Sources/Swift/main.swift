@@ -1,4 +1,5 @@
 import CXX
 
-var v = NS1.NS2.V()
-print("\(v.getAnswer())")
+var a = A()
+// var b = a.getAnswer()
+print("\(a.a)")
