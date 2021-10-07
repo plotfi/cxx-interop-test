@@ -2,7 +2,7 @@ import CXX
 import std.vector
 
 var v = V()
-var Vector : cxx_std_vector_of_int = v.getVec()[0]
+var Vector = v.Vec
 
 print("std::vector: ", terminator: "[ ")
 for i in 0..<Vector.size() {
