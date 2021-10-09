@@ -1,28 +1,12 @@
 #ifndef CXX_H
 #define CXX_H
 
-#include <vector>
-#include <string_view>
+inline int increment(int t) { return t + 1; }
 
-bool is_str_42(std::string_view view) {
-    return view == "42";
-}
+struct Incrementor { static int incrementee; };
 
-int cxx_f(int);
+int Incrementor::incrementee = increment(41);
 
-struct MyStruct {
-  const int &operator[](int x) const { return 42; }
-};
-
-struct MyStructValType {
-  const int operator[](int x) const { return 42; }
-};
-
-struct V {
-  std::vector<int> &getVec() { return Vec; }
-  std::vector<int> Vec = {1, 2, 3};
-};
-
-using cxx_std_vector_of_int = std::vector<int>;
+inline int initializeStaticVar() { return Incrementor::incrementee; }
 
 #endif
