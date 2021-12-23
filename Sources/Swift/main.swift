@@ -2,6 +2,21 @@ import CXX
 import std.string_view
 import std.vector
 
+/*
+
+Output should look something like:
+
+42 2 3 4 5 99 99
+
+v1: [42, 2, 3, 4, 5, 99, 99]
+v3: [42, 2, 3, 4, 5, 99, 99]
+Modifying v3
+v1: [42, 2, 3, 4, 5, 99, 99]
+v3: [42, 2, 3, 4, 5, 99, 99, 2013]
+Done.
+
+*/
+
 /******************************************************************************\
 
   Showcasing Extensions with template types and instances.
