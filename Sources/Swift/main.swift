@@ -8,7 +8,7 @@ import std.vector
 
 \******************************************************************************/
 
-// Extensions to generic versions of templates do not work
+// Extensions to generic versions of templates do not work (PL: I have not figured this out myself that is)
 // extension std.vector { mutating func swift_array() -> Array<Self.value_type> { } }
 
 // Putting an extension on a typealias / using is possible.
