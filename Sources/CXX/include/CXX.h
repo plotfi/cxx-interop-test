@@ -8,21 +8,15 @@ bool is_str_42(std::string_view view) {
     return view == "42";
 }
 
-int cxx_f(int);
+namespace NS1 {
+  enum class Color {
+    White,
+    Black,
+    Green,
+    Red,
+  };
+}
 
-struct MyStruct {
-  const int &operator[](int x) const { return 42; }
-};
-
-struct MyStructValType {
-  const int operator[](int x) const { return 42; }
-};
-
-struct V {
-  std::vector<int> &getVec() { return Vec; }
-  std::vector<int> Vec = {1, 2, 3};
-};
-
-using cxx_std_vector_of_int = std::vector<int>;
+ using cxx_std_vector_of_int = std::vector<int>;
 
 #endif
