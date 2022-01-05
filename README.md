@@ -7,7 +7,11 @@ To build you need the latest top of tree Swift from github.com/apple/swift
 ## NOTE: SPM can be busted at times when things require the latest ToT Swift. CMake can be more reliable:
 
 ```
-cmake -GNinja -B./build .
+cmake -GNinja -B./build \
+  -DCMAKE_Swift_COMPILER=/path/to/bin/swiftc \
+  -DCMAKE_CXX_COMPILER=/path/to/bin/clang++ \
+  -DSWIFT_CXX_TOOLCHAIN=/path/to/toolchain/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/ .
+
 ninja -C./build
 ./build/cxx-interop-test
 
