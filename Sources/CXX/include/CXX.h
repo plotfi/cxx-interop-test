@@ -17,6 +17,9 @@ namespace NS1 {
   };
 }
 
- using cxx_std_vector_of_int = std::vector<int>;
+using cxx_std_vector_of_int = std::vector<int>;
+
+#include <functional>
+std::function<int(int)> getFunction() { return [](int a) { return 0; }; }
 
 #endif

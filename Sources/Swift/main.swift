@@ -111,4 +111,16 @@ let isStr42 = is_str_42(view)
 
 let C = NS1.Color.Black
 
+
+/******************************************************************************\
+
+  Showcasing C++ Lambdas (does not work currently).
+
+\******************************************************************************/
+
+#if false
+var lambdaOut = getFunction2()
+var value = lambdaOut(42)
+#endif
+
 print("Done.")
