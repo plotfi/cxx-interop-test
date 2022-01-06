@@ -119,7 +119,7 @@ let C = NS1.Color.Black
 \******************************************************************************/
 
 #if false
-var lambdaOut = getFunction2()
+var lambdaOut = getFunction()
 var value = lambdaOut(42)
 #endif
 
