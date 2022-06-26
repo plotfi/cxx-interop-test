@@ -14,12 +14,12 @@ struct UITextAttribute {
 struct UIAccessibilityContext {
   NSString *_Nullable accessibilityIdentifier;
   UITextAttribute accessibilityLabel;
-  NSDictionary<NSString *, id> *_Nullable extra;
+  int extra;
 
   static UIAccessibilityContext
   build(NSString *_Nullable accessibilityIdentifier,
         UITextAttribute accessibilityLabel,
-        NSDictionary<NSString *, id> *_Nullable extra) {
+        int extra) {
     return {
         .accessibilityIdentifier = accessibilityIdentifier,
         .accessibilityLabel = accessibilityLabel,

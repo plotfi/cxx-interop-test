@@ -9,7 +9,7 @@ let textAttr = UITextAttribute(accessibilityLabel) // crash
 _ = UIAccessibilityContext.build(
   accessibilityIdentifier,
   textAttr,
-  nil
+  42
 )
 
 print("Done.")
