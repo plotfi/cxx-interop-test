@@ -12,6 +12,8 @@ struct UIAccessibilityContext {
   UITextAttribute accessibilityLabel;
   int extra;
 
+  // NOTE: If following line is pass by reference, we avoid the _Block_copy crash
+  // static UIAccessibilityContext build(const UITextAttribute &accessibilityLabel) {
   static UIAccessibilityContext build(UITextAttribute accessibilityLabel) {
     UIAccessibilityContext context;
     context.accessibilityLabel = accessibilityLabel;
