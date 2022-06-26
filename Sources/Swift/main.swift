@@ -1,15 +1,10 @@
 import CXX
 import Foundation
 
-let accessibilityIdentifier = "Hello"
-let accessibilityLabel = "Cancel"
+var textAttr1 = UITextAttribute(24)
+var a = textAttr1.textBlock()
+print("Before. \(a)")
 
-let textAttr = UITextAttribute(accessibilityLabel) // crash
-
-_ = UIAccessibilityContext.build(
-  accessibilityIdentifier,
-  textAttr,
-  42
-)
-
-print("Done.")
+var context = UIAccessibilityContext.build(textAttr1)
+var b = context.accessibilityLabel.textBlock()
+print("Done. \(b)")

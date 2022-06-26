@@ -1,31 +1,20 @@
-#import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-typedef NSString *_Nonnull (^UITextBlock)();
+typedef int (^UITextBlock)();
 
 struct UITextAttribute {
-  UITextAttribute(NSString *_Nullable text):
-    textBlock(text ? ^{ return text; } : (UITextBlock)nil) {};
+  UITextAttribute() : textBlock((^{ return 42; })){};
+  UITextAttribute(int text): textBlock(^{ return text; }) {};
 
-  UITextBlock _Nullable textBlock;
+  UITextBlock textBlock;
 };
 
 struct UIAccessibilityContext {
-  NSString *_Nullable accessibilityIdentifier;
+  int accessibilityIdentifier;
   UITextAttribute accessibilityLabel;
   int extra;
 
-  static UIAccessibilityContext
-  build(NSString *_Nullable accessibilityIdentifier,
-        UITextAttribute accessibilityLabel,
-        int extra) {
-    return {
-        .accessibilityIdentifier = accessibilityIdentifier,
-        .accessibilityLabel = accessibilityLabel,
-        .extra = extra,
-    };
+  static UIAccessibilityContext build(UITextAttribute accessibilityLabel) {
+    UIAccessibilityContext context;
+    context.accessibilityLabel = accessibilityLabel;
+    return context;
   }
 };
-
-NS_ASSUME_NONNULL_END
