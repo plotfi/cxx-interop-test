@@ -17,7 +17,8 @@ target_include_directories(cxx-support PUBLIC
 
 add_executable(cxx-interop-test Sources/Swift/main.swift)
 target_compile_options(cxx-interop-test PRIVATE
-  "SHELL:-Xfrontend -enable-cxx-interop"
+  "SHELL:-Xfrontend -enable-objc-interop"
+  "SHELL:-Xfrontend -enable-experimental-cxx-interop"
   "SHELL:-Xfrontend -validate-tbd-against-ir=none"
   "SHELL:-Xcc -nostdinc++"
   "SHELL:-Xcc -fno-exceptions"

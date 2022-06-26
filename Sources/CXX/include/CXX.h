@@ -1,25 +1,24 @@
-#ifndef CXX_H
-#define CXX_H
+#import <Foundation/Foundation.h>
 
-#include <vector>
-#include <string_view>
+NS_ASSUME_NONNULL_BEGIN
 
-bool is_str_42(std::string_view view) {
-    return view == "42";
-}
+typedef NSString *_Nonnull (^UITextBlock)();
 
-namespace NS1 {
-  enum class Color {
-    White,
-    Black,
-    Green,
-    Red,
-  };
-}
+struct UITextAttribute {
+  UITextAttribute() = default;
+  UITextAttribute(UITextBlock _Nullable textBlock): textBlock(textBlock) {};
+  UITextAttribute(NSString *_Nullable text):
+    textBlock(text ? ^{ return text; } : (UITextBlock)nil) {};
 
-using cxx_std_vector_of_int = std::vector<int>;
+  UITextBlock _Nullable textBlock;
+};
 
-#include <functional>
-std::function<int(int)> getFunction() { return [](int a) { return 0; }; }
+struct UIAccessibilityContext {
+  UITextAttribute accessibilityLabel;
+  static UIAccessibilityContext build(UITextAttribute accessibilityLabel) {
+    return { .accessibilityLabel = accessibilityLabel };
+  }
+};
 
-#endif
+
+NS_ASSUME_NONNULL_END
