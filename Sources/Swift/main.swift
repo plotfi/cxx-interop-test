@@ -1,5 +1,4 @@
 import CXX
-import Foundation
 
 var textAttr1 = UITextAttribute(24)
 var a = textAttr1.textBlock()
