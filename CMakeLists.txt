@@ -8,20 +8,15 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_library(cxx-support Sources/CXX/CXX.cpp)
 target_compile_options(cxx-support PRIVATE
-  -I${SWIFT_CXX_TOOLCHAIN}/usr/include/c++/v1
   -fno-exceptions
-  -fignore-exceptions
-  -nostdinc++)
+  -fignore-exceptions)
 target_include_directories(cxx-support PUBLIC
   ${CMAKE_SOURCE_DIR}/Sources/CXX/include)
 
 add_executable(cxx-interop-test Sources/Swift/main.swift)
 target_compile_options(cxx-interop-test PRIVATE
-  "SHELL:-Xfrontend -enable-cxx-interop"
+  "SHELL:-cxx-interoperability-mode=default"
   "SHELL:-Xfrontend -validate-tbd-against-ir=none"
-  "SHELL:-Xcc -nostdinc++"
   "SHELL:-Xcc -fno-exceptions"
-  "SHELL:-Xcc -fignore-exceptions"
-  "SHELL:-Xcc -I${SWIFT_CXX_TOOLCHAIN}/usr/include/c++/v1"
-  -lc++)
+  "SHELL:-Xcc -fignore-exceptions")
 target_link_libraries(cxx-interop-test PRIVATE cxx-support)

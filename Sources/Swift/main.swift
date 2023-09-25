@@ -1,6 +1,5 @@
 import CXX
-import std.string_view
-import std.vector
+import CxxStdlib
 
 /*
 
@@ -45,25 +44,24 @@ extension cxx_std_vector_of_int {
 \******************************************************************************/
 
 let arr : [CInt] = [1, 2, 3, 4, 5]
-var v1 = std.vector<CInt, std.allocator<CInt>>()
+var v1 = cxx_std_vector_of_int()
 
 var val : CInt = 42
-var v2 = std.vector<CInt, std.allocator<CInt>>(2, &val)
+var v2 = cxx_std_vector_of_int(2, val)
 
 for a in arr {
-  var b = a
-  v1.push_back(&b)
+  let b = a
+  v1.push_back(b)
 }
 
 // "__ZNSt3__16vectorIiNS_9allocatorIiEEEixEm", referenced from
 // v1[1] = 24
 
-var data : UnsafeMutablePointer<CInt> = v1.data()
-data[0] = 42
+v1[0] = 42
 
 var a : CInt = 99
-v1.push_back(&a)
-v1.push_back(&a)
+v1.push_back(a)
+v1.push_back(a)
 
 for i in 0..<v1.size() {
    print(v1[i], terminator: " ")
@@ -77,7 +75,7 @@ print("v3: \(v3.swift_array())")
 print("Modifying v3")
 
 var b : CInt = 2013
-v3.push_back(&b)
+v3.push_back(b)
 print("v1: \(v1.swift_array())")
 print("v3: \(v3.swift_array())")
 
