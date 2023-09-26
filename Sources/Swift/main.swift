@@ -16,6 +16,10 @@ Done.
 
 */
 
+public func TheAnswer() -> Int {
+  return 42
+}
+
 /******************************************************************************\
 
   Showcasing Extensions with template types and instances.
@@ -120,5 +124,8 @@ let C = NS1.Color.Black
 var lambdaOut = getFunction()
 var value = lambdaOut(42)
 #endif
+
+let answersAnswer = TheAnswersAnswer()
+print("The answer to the answer is \(answersAnswer)")
 
 print("Done.")

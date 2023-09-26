@@ -17,6 +17,8 @@ namespace NS1 {
   };
 }
 
+int TheAnswersAnswer();
+
 using cxx_std_vector_of_int = std::vector<int>;
 
 #include <functional>
